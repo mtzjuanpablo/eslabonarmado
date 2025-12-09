@@ -1,6 +1,7 @@
 body {
     background-color: rgb(0, 0, 0);
 	font-family: Poppins, sans-serif !important;
+	margin: 0;
 }
 #wrapper {width: 100%;
 					margin: 0 auto;
@@ -50,8 +51,9 @@ body {
 			text-shadow: 5px 5px 5px black;
 			}
 			/** Con el a:hover y poner el color en blanco, pone el enlace en blanco cuando pasas el ratón por encima*/
-		nav a:hover {color: white;}
-		nav a:visited {}
+		nav a:hover {color: rgb(255, 255, 255);
+			text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.701);
+		}
 
         #bienvenida {
             background-image: url(imagenes/eslabonarmado1.jpg);
@@ -147,9 +149,10 @@ body {
 						text-align: justify;
 						}
 		#derechaMedio{
-						position: relative;
+						position: center;
 						padding-bottom: 10px;
 						padding-left: 2px;
+						padding-right: 40px;
 						z-index: 10;
 						text-align: justify;
 						text-align: center;
@@ -248,12 +251,31 @@ footer {
 }
  #headerhistoria {
             background-image: url(imagenes/eslabonarmado3r.jpg);
-            background-size: 100%;
+            background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
             height: 700px;
             display: flex;
             align-items: flex-end;
 			text-shadow: 5px 5px 5px black;
+			
         }
+#textoHistoria {
+	  position: relative;
+    z-index: 1;          /* el contenido queda arriba del video */
+    color: white;        /* para que sea visible */
+}		
+
+#videoFondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* hace que el video llene toda la pantalla */
+    z-index: -1;         /* manda el video al fondo */
+	 filter: brightness(40%); /* reduce el brillo del video */
+}
 #textoHistoria p {
 	margin-left: 100px;
 	margin-right: 500px;
@@ -274,7 +296,6 @@ footer {
     gap: 0;          /* sin separación */
     margin: 0;
     padding: 0;
-	max-width: 900px;
 }
 
 /* Todas las imágenes a color por defecto */
@@ -298,6 +319,271 @@ footer {
 /* La imagen bajo el cursor queda a color */
 #portadas img:hover {
     filter: grayscale(0%);
+}
+#headerIntegrantes {
+            background-image: url(imagenes/eslabonarmado7.jpg);
+            background-size: 100%;
+            height: 700px;
+            display: flex;
+            align-items: flex-end;
+			text-shadow: 5px 5px 5px black;
+}
+/* CONTENEDOR PRINCIPAL */
+.galeria {
+    display: flex;
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+}
+
+/* CADA PANEL ES UN <a> */
+.galeria .panel {
+    flex-grow: 1;
+    width: 0px;                /* inicia colapsado */
+    position: relative;
+    overflow: hidden;
+    transition: .5s ease;
+    display: block;
+    text-decoration: none;
+}
+
+/* EXPANSIÓN */
+.galeria .panel:hover {
+    width: 75%;
+}
+
+/* IMAGEN */
+.galeria .panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .8;
+    filter: grayscale(1);
+    transition: .5s ease;
+}
+
+/* COLOR AL HACER HOVER */
+.galeria .panel:hover img {
+    opacity: 1;
+    filter: grayscale(0);
+}
+
+/* TEXTO */
+.galeria .panel .texto {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transition: .3s ease;
+    pointer-events: none;
+    text-shadow: 5px 5px 5px black;
+}
+
+/* TEXTO APARECE */
+.galeria .panel:hover .texto {
+    opacity: 1;
+}
+#headerImagenes {
+	 background-image: url(imagenes/eslabonarmado6.jpg);
+            background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+            height: 700px;
+            display: flex;
+            align-items: flex-end;
+			text-shadow: 5px 5px 5px black;
+}
+.modal-contenido {
+    width: 700px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+    animation: zoom .3s;
+}
+
+#headerNewestler{
+	 background-image: url(imagenes/eslabonarmado5.jpg);
+            background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+            height: 700px;
+            display: flex;
+            align-items: flex-end;
+			text-shadow: 5px 5px 5px black;
+}
+#formulario a{
+					  display:block;
+					  color:#444a57;  
+					  text-decoration:none;
+					  font-weight:bold;
+					  margin-top:40px;
+					  text-align:center;
+					}
+
+		#formulario{
+					  position:relative;
+					  top:20px;
+					  height:685px;
+					  width:800px;
+					  background-size:cover;
+					  margin-left:auto;
+					  margin-right:auto; 
+					}
+
+		.module{
+				  position:relative;
+				  top:2%;    
+				  height:70%;
+				  width:450px;
+				  margin-left:auto;
+				  margin-right:auto;
+				  border-radius:50px;
+				  background:RGBA(255,255,255,1);
+				    
+				  -webkit-box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);        
+				  box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
+				  
+				}
+
+		.module ul{
+				  list-style-type:none;
+				  margin:0;
+				}
+
+		.tab{
+			  float:left;
+			  height:60px;
+			  width:50%;
+			  padding-top:20px;
+			  box-sizing:border-box;
+			  background:#eeeeee;  
+			  text-align:center;
+			  cursor:pointer;
+			  transition:background .4s;
+			}
+
+		.tab:first-child{  
+						  -webkit-border-radius: 5px 0px 0px 0px;
+						  border-radius: 5px 0px 0px 0px;
+						}
+
+		.tab:last-child{  
+						  -webkit-border-radius: 0px 5px 0px 0px;
+						  border-radius: 5px 50px 0px 0px;
+						}
+
+		.tab:hover{  
+				  background-color:rgba(0,0,0,.1);
+				}
+
+		.activeTab{
+				  background:#fff;
+				}
+
+		.activeTab .icon{
+						  opacity:1;
+						}
+
+		.icon{
+			  height:24px;
+			  width:24px;
+			  opacity:.2;
+			}
+
+		.form{
+			  float:left;
+			  height:86%;
+			  width:100%;
+			  box-sizing:border-box;
+			  padding:40px;
+			}
+
+		.textbox{
+				  height:50px;
+				  width:100%;
+				  border-radius:20px;
+				  border:rgba(194, 187, 187, 0.996) 2px solid;
+				  box-sizing:border-box;
+				  padding:10px;
+				  margin-bottom:15px;
+				}
+		.textbox:focus{
+					  outline:none;
+					   border:rgba(24,149,215,1) 2px solid;
+					   color:rgba(24,149,215,1);
+					}
+
+		.button{
+				  height:50px;
+				  width:100%;
+				  border-radius:50px;
+				  border:rgba(0,0,0,.3) 0px solid;
+				  box-sizing:border-box;
+				  padding:10px;
+				  margin-bottom:30px;
+				  background: rgb(0, 0, 0);
+				  color:#FFF;
+				  font-weight:bold;
+				  font-size: 12pt;
+				  transition:background .4s;
+				  cursor:pointer;
+				}
+
+		.button:hover{
+					  background:rgb(56, 120, 27);
+					  
+					}
+#yo
+	#yo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* centra vertical */
+    align-items: center;      /* centra horizontal */
+    text-align: center;
+    gap: 0px;                /* separación bonita entre elementos */
+}
+#perfilFoto {
+	width: 100px;
+	border-radius: 50%;
+}
+#redeslogos img {
+	width: 30px;
+}
+#yo p{
+	color: #000000;
+	font-weight: bold;
+}
+.galeriaIma {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+.galeriaIma img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .3s;
+	object-fit: cover;
+	display: block;
+}
+
+.galeriaIma img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+	background-color: #000000;
+	height: 130px;
+	
 }
 footer p {
 	color: rgb(255,255,255);
